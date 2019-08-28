@@ -1,0 +1,27 @@
+user-> browser: REQUEST PAGE https://fullstack-exampleapp.herokuapp.com/spa
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server --> browser: RETURNS 200
+
+note over browser, server:
+the HTML body of the page in the HTTP Response body
+with reference to the document main.css and spa.js
+end note
+
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/main.css
+server --> browser: RETURNS 200
+
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa.js
+server --> browser: RETURNS 200
+
+note over browser, server:
+The browser execute the javascript code in spa.js and generate a new request
+end note
+
+browser -> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json
+server --> browser: RETURNS 200
+
+note over browser, server:
+In the data.json there are all the notes of the system
+end note
+
+browser -> browser: render the notes coming from data.json
