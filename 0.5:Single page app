@@ -1,0 +1,6 @@
+user-> browser: Fill the text field with a message
+user-> browser: Clicks on the submit button
+browser->browser: Push the note to the list of notes
+browser->browser: Redraw the notes list
+browser->server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+server-->browser: returns 201
